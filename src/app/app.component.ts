@@ -1,22 +1,30 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar/navbar.component";
-import { FooterComponent } from "./components/footer/footer.component";
-import { FeaturesComponent } from "./components/features/features.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, FeaturesComponent, RouterOutlet],
+  imports: [NavbarComponent, RouterOutlet],
   templateUrl: './app.component.html',
   styles: [],
 })
 export class AppComponent {
   title = 'Sentinel';
 
-  isDarkMode = signal(false);
 
-  toggleTheme() {
-    this.isDarkMode.update(value => !value);
+  isDarkMode = signal(this.getInitialTheme());
+  
+  private getInitialTheme(): boolean {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme ? savedTheme === 'dark' : false;
+  }
+
+  toggleTheme(): void {
+    this.isDarkMode.update(value => {
+      const newValue = !value;
+      localStorage.setItem('theme', newValue ? 'dark' : 'light');
+      return newValue;
+    });
   }
 }
