@@ -1,0 +1,18 @@
+ <!-- Navbar -->
+ <div class="navbar bg-base-100 shadow-lg px-4 sm:px-6 lg:px-8">
+  <div class="navbar-start">
+    <a routerLinkActive="active" routerLink="/" class="text-xl sm:text-2xl font-bold gradient-text">Sentinel</a>
+  </div>
+
+    <div class="navbar-end">
+      <button type="button" class="btn btn-ghost btn-circle" (click)="onThemeToggle()()">
+        <span class="text-4xl">
+          @if (isDarkMode()) {
+            ☀️
+          } @else {
+            🌙
+          }
+        </span>
+      </button>
+    </div>
+  </div>
