@@ -63,7 +63,7 @@ Follow these steps to set up the project locally:
 
 ## 💻 Demo
 
-A live demo of the app is available [here]([Sentinel](https://sentinel-xi.vercel.app/)).
+A live demo of the app is available [here](https://sentinel-xi.vercel.app/).
 
 ----------
 
