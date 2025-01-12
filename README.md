@@ -1,27 +1,123 @@
-# Sentinel
+# Sentinel: Your Sentiment Analyzer  
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.4.
+Analyze emotional tone effortlessly with **Sentinel**, a sentiment analyzer powered by modern frontend technologies and designed for an interactive, seamless user experience.  
 
-## Development server
+## 🚀 Features  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🌈 **Gradient Text and Animations**: A modern and visually appealing UI with Tailwind CSS animations and gradients.  
+- 🧠 **Sentiment Analysis**: Analyze text for emotional tone, intensity, and recommended actions.  
+- 🎯 **Interactive Results**: Dynamic display of sentiment, intensity, and suggestions with real-time animations.  
+- 📈 **Responsive Design**: Fully responsive layout for all screen sizes, from mobile to desktop.  
+- 🔥 **Error Handling**: User-friendly error alerts to guide the user in case of issues.  
+---
 
-## Code scaffolding
+## 🖥️ Tech Stack  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend Framework**: Angular 18 along with TailwindCSS 
+- **Backend**: Generative AI integration via the ```@google/generative-ai```  package
+- **Hosting**: Vercel for fast and reliable deployment 
+- **UI Components**: DaisyUI cards, buttons, and text area  
+- **Animations**: TailwindCSS animations for a polished experience  
+---
 
-## Build
+## 🛠️ Installation & Setup
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Follow these steps to set up the project locally:  
+### Prerequisites
+- [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli)
+- [Angular v18](https://angular.dev/)
+- Node.js >= 14.x
+- npm or yarn
+----
+### Steps
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/Talha-Tahir2001/Sentinel.git  
+2.  Navigate to the project directory:
+    ```bash
+    cd Sentinel
+3.  Install dependencies:
+    ```bash
+    npm install 
+4. Set up your API key:
+    -   Replace `your_api_key_here` in the `.env` file with your API key for Google Generative AI.
 
-## Running unit tests
+5.  Start the development server:
+     ```bash
+    ng serve 
+6.  Open your browser and visit:
+     ```bash
+    http://localhost:3000 
+----------
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📋 Usage
 
-## Running end-to-end tests
+ - Enter the text you wish to analyze in the text area.
+ - Click **"Analyze Sentiment"** to process the input.
+ - View the analysis results, including:
+    -   Sentiment: Emotional tone of the text.
+    -   Intensity: Strength of the emotional tone (e.g., Positive, Negative, Neutral).
+    -   Suggested Actions: Recommended follow-up actions.
+    - Analysis of the message and reason
+----------
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 💻 Demo
 
-## Further help
+A live demo of the app is available [here]([Sentinel](https://sentinel-xi.vercel.app/)).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+----------
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix:
+    ```bash
+    `git checkout -b feature-name` 
+3.  Commit your changes:
+    ```bash
+    git commit -m "Add new feature"` 
+4.  Push to your branch:
+    ```bash
+    git push origin feature-name` 
+5.  Open a pull request.
+Also feel free to check out the [issues page](https://github.com/Talha-Tahir2001/textractor/issues).
+
+----------
+
+## 📜 License
+
+This project is licensed under the MIT License.  
+See the [LICENSE](https://github.com/Talha-Tahir2001/Sentinel/blob/main/LICENSE) file for details.
+
+----------
+
+## 🛡️ Security
+
+If you find a security issue, please open an issue or contact me directly.
+
+----------
+
+## 🌟 Acknowledgments
+-   [@google/generative-ai](https://www.npmjs.com/package/@google/generative-ai)
+- [Angular](https://angular.dev/)
+-   [Vercel](https://vercel.com/)
+-  [Tailwind CSS](https://tailwindcss.com/docs/guides/angular)
+- [DaisyUI](https://daisyui.com/)
+----------
+
+## 📞 Contact
+
+Feel free to reach out:
+-   **GitHub**: [Talha Tahir](https://github.com/Talha-Tahir2001)
+-   **LinkedIn**: [Talha Tahir](https://www.linkedin.com/in/talha-tahir1/)
+
+----------
+
+### 🙌 Thank You!
+
+If you find this project helpful, give it a ⭐ on [GitHub](https://github.com/Talha-Tahir2001/Sentinel)!
+
+Made with ❤️ by [Talha](https://github.com/Talha-Tahir2001)
+
+
