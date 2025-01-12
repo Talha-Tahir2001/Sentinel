@@ -1,0 +1,97 @@
+<div class="min-h-[calc(100vh-64px)] bg-base-200 p-4 sm:p-6 lg:p-8">
+  <div class="max-w-4xl mx-auto space-y-8">
+    <div class="text-center">
+      <h1 class="text-3xl md:text-4xl font-bold gradient-text mb-4 animate-fade-in">Sentinel: Your Sentiment Analyzer</h1>
+      <p class="text-base-content/80 gradient-text animate-fade-in-delayed">Enter your text below to analyze its emotional tone</p>
+    </div>
+
+    <div class="card bg-base-100 shadow-xl transition-all duration-300 hover:shadow-2xl">
+      <div class="card-body">
+        <textarea
+          class="textarea textarea-bordered textarea-primary w-full h-48 transition-all duration-300 focus:shadow-lg"
+          placeholder="Enter your text here..."
+          [value]="text()"
+          (input)="onTextInput($event)"
+          [class.textarea-disabled]="isAnalyzing()"
+        ></textarea>
+        
+        <div class="card-actions justify-end mt-4">
+          <button 
+            type="button"
+            class="btn btn-primary relative overflow-hidden group" 
+            [disabled]="!text().trim() || isAnalyzing()"
+            (click)="analyzeText()"
+          >
+            @if (isAnalyzing()) {
+              <span class="loading loading-spinner"></span>
+              Analyzing...
+            } @else {
+              <span class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:rotate-180" 
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Analyze Sentiment
+              </span>
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+
+    @if (result()) {
+      <div class="card bg-base-100 shadow-xl fade-in transition-all duration-300 hover:shadow-2xl">
+        <div class="card-body">
+          <h2 class="card-title gradient-text font-bold text-2xl mb-4">Analysis Results</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="stat bg-base-200 rounded-box p-4 transition-all duration-300 hover:shadow-md">
+              <div class="stat-title">Sentiment</div>
+              <div class="stat-value text-primary flex items-center gap-2">
+                {{ result()?.sentiment }}
+                <span class="text-2xl animate-bounce">{{ result()?.emoji }}</span>
+              </div>
+              <div class="stat-desc capitalize">{{ result()?.category }}</div>
+            </div>
+            
+            <div class="stat bg-base-200 rounded-box p-4 transition-all duration-300 hover:shadow-md">
+              <div class="stat-title">Intensity</div>
+              <div class="stat-value text-secondary">
+                {{ (result()?.intensity || 0) * 100 }}%
+              </div>
+              <div class="stat-desc">Emotional strength</div>
+            </div>
+            
+            <div class="stat bg-base-200 rounded-box p-4 transition-all duration-300 hover:shadow-md">
+              <div class="stat-title">Action</div>
+              <div class="stat-value text-accent capitalize">
+                {{ result()?.suggested_action }}
+              </div>
+              <div class="stat-desc">Recommended action</div>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-base-200 rounded-box p-4 transition-all duration-300 hover:shadow-md">
+            <h3 class="font-semibold stat-title mb-2">Analysis Message:</h3>
+            <p class="stat-value text-pretty text-green-400">{{ result()?.message }}</p>
+            
+            <h3 class="font-semibold stat-title mb-2 mt-4">Reason:</h3>
+            <p class="stat-value text-pretty text-green-400">{{ result()?.reason }}</p>
+          </div>
+        </div>
+      </div>
+    }
+    @if (error()) {
+      <div class="alert alert-error mt-4 animate-shake">
+        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" 
+             fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>{{ error() }}</span>
+      </div>
+    }
+    
+  </div>
+</div>
