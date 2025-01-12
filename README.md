@@ -58,7 +58,7 @@ Follow these steps to set up the project locally:
     -   Sentiment: Emotional tone of the text.
     -   Intensity: Strength of the emotional tone (e.g., Positive, Negative, Neutral).
     -   Suggested Actions: Recommended follow-up actions.
-    - Analysis of the message and reason
+    -   Analysis of the message and reason
 ----------
 
 ## 💻 Demo
@@ -73,15 +73,15 @@ Contributions are welcome! Here's how you can help:
 1.  Fork the repository.
 2.  Create a new branch for your feature or bug fix:
     ```bash
-    `git checkout -b feature-name` 
+    git checkout -b feature-name 
 3.  Commit your changes:
     ```bash
-    git commit -m "Add new feature"` 
+    git commit -m "Add new feature" 
 4.  Push to your branch:
     ```bash
-    git push origin feature-name` 
+    git push origin feature-name 
 5.  Open a pull request.
-Also feel free to check out the [issues page](https://github.com/Talha-Tahir2001/textractor/issues).
+Also feel free to check out the [issues page](https://github.com/Talha-Tahir2001/Sentinel/issues).
 
 ----------
 
