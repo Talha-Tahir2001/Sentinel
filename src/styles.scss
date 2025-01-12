@@ -5,10 +5,11 @@
 
 .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+    
   }
   
   .card-hover {
-    @apply transition-transform duration-300 hover:scale-105;
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-lg;
   }
   
   .fade-in {
@@ -24,4 +25,24 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-fade-in-delayed {
+    animation: fadeIn 0.5s ease-out 0.2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+  
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
   }
